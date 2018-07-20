@@ -11,7 +11,11 @@ const getAllArticles = (req, res, next) => {
 const getArticleComments = (req, res, next) => {
   Article.find({ _id: req.params.article_id })
     .then(foundArticle => {
-      res.status(200).send({ foundArticle })
+      Comment.find({ belongs_to: foundArticle[0]._id })
+        .then(comments => {
+          console.log(comments)
+          res.status(200).send({ comments })
+        })
     })
     .catch(next)
 }

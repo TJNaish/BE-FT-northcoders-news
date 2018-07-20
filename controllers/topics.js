@@ -13,6 +13,7 @@ const articlesByTopic = (req, res, next) => {
     .then(topicId => {
       Article.find({ belongs_to: topicId[0]._id })
         .then(articles => {
+          console.log(articles)
           res.status(200).send({ articles })
         })
     })

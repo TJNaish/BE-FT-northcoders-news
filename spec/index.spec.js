@@ -49,23 +49,16 @@ describe('ncnews', () => {
           })
       })
       it('2 /:article_id/comments GET responds with all comments for one article', () => {
-        console.log(articleDocs[0] + '<<<ARTICLE<<<')
-        console.log('---------')
-        console.log(commentDocs[0] + '<<<COMMENT<<<')
-        console.log('---------')
-        console.log(topicDocs[0] + '<<<TOPIC<<<')
-        console.log('---------')
-        console.log(userDocs[0] + '<<<USER<<<')
         return request
-          .get(`/api/articles/${articleDocs[0]}/comments`)
+          .get(`/api/articles/${articleDocs[1]._id}/comments`)
           .expect(200)
           .then(res => {
-            expect(res.body.comments.length).to.equal(234567890)
+            expect(res.body.comments.length).to.equal(2)
           })
       })
     })
     describe('users', () => {
-      it('1 /:username GET returns a JSON object with profile data for the user', () => {
+      it.only('1 /:username GET returns a JSON object with profile data for the user', () => {
         return request
           .get('api/users/dedekind561')
           .expect(200)
