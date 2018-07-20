@@ -9,13 +9,14 @@ const getAllTopics = (req, res, next) => {
 }
 
 const articlesByTopic = (req, res, next) => {
-  Topic.find({ slug: req.params.topic })
+  Topic.findOne({ slug: req.params.topic })
     .then(topicId => {
-      Article.find({ belongs_to: topicId[0]._id })
-        .then(articles => {
-          console.log(articles)
-          res.status(200).send({ articles })
-        })
+      topicId === null
+        ? next({ status: 404, message: `Topic "${req.params.topic}" not found` })
+        : Article.find({ belongs_to: topicId._id })
+          .then(articles => {
+            res.status(200).send({ articles })
+          })
     })
     .catch(next)
 }
