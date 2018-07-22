@@ -20,3 +20,8 @@ module.exports = config[NODE_ENV];
 ----------------------------------------------------------------------------------
 
 Change line 18 'production' to fit whichever DB you want to work from
+
+root/api will show you a list of endpoints
+
+`npm run seed` will seed the database.
+line 4 of the seed file located at seed/seed.dev.js `const rawData = require("./devData")` should be left unchanged for production, however this can be modified to `const rawData = require("./testData")` should you wish to populate the DB with a very small sample of data for testing purposes.
