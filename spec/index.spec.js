@@ -46,6 +46,7 @@ describe('ncnews', () => {
           .expect(200)
           .then(res => {
             expect(res.body.articles.length).to.equal(2)
+            expect(res.body.articles[0].belongs_to).to.eql(res.body.articles[1].belongs_to)
           })
       })
       it('2.1 /:topic_slug/articles GET responds with 404 when topic is not found', () => {
@@ -72,6 +73,7 @@ describe('ncnews', () => {
           .expect(200)
           .then(res => {
             expect(res.body.comments.length).to.equal(2)
+            expect(res.body.comments[0].belongs_to).to.eql(res.body.comments[1].belongs_to)
           })
       })
       it('2.1 /:article_id/comments GET responds with 404 when article id is not found', () => {
@@ -156,6 +158,7 @@ describe('ncnews', () => {
           .expect(201)
           .then(res => {
             expect(res.body.comment).to.contain.keys('belongs_to', 'body', 'created_at', 'created_by', 'votes')
+            expect(res.body.comment.body).to.equal("Green is not a creative colour")
           })
       })
       it('5.1 /:article_id/ POST responds with 404 when article id is not found', () => {
@@ -192,14 +195,6 @@ describe('ncnews', () => {
             expect(res.body.message).to.equal("Username sergeantwuffles not found")
           })
       })
-      // xit('2 /:username/repos returns a JSON array with all the public repos of the specified user.', () => {
-      //   return request
-      //     .get('api/users/dedekind561/repos')
-      //     .expect(200)
-      //     .then(res => {
-      //       expect(res.body.users.length).to.equal(230947)
-      //     })
-      // })
     })
     describe('comments', () => {
       it('1.0 PUT a vote counter up on a single comment', () => {
