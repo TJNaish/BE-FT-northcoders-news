@@ -3,7 +3,7 @@ Tim Naish NC-News Back End
 config - You should set up a config folder in the root of the project. Create an index.js file inside of this, and use the following code:
 
 ----------------------------------------------------------------------------------
-const config = {
+`const config = {
   dev: {
     DB_URL: 'mongodb://localhost:27017/ncnews'
   },
@@ -16,7 +16,7 @@ const config = {
 }
 
 const NODE_ENV = process.env.NODE_ENV || 'production';
-module.exports = config[NODE_ENV];
+module.exports = config[NODE_ENV];`
 ----------------------------------------------------------------------------------
 
 Change line 18 'production' to fit whichever DB you want to work from
