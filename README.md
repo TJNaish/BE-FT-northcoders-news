@@ -1,12 +1,12 @@
 # NC News Project
 
-##About
+## About
 
 This project is an example of a server for online content management, using MongoDB and an express server model to sort, link and display data.
 
 You can find a deployed version of this project at https://tnaish-ncnews.herokuapp.com/api
 
-##Download & Setup
+## Download & Setup
 
 To download this project, take the following steps:
 
@@ -40,7 +40,7 @@ module.exports = config[NODE_ENV];
 -Run thge server using your terminal by typing `node index/js`
 -You can now connect to and view your server locally by opening an internet browser, and going to 127.0.0.1/api
 
-##Dependencies
+## Dependencies
 
 This project utilises the following dependencies:
 -Node 8.10.0
@@ -51,7 +51,7 @@ This project utilises the following dependencies:
 
 You can quickly install of of these dependencies by navigating to the root folder of the project in your terminal and typing `npm i body-parser express mongoose path`
 
-##Modifying
+## Modifying
 
 You can change line 18 'production' to fit whichever DB you want to work from (produciton/dev/test)
 
