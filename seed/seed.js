@@ -4,18 +4,13 @@ const {
   createRef,
   formatArticleData,
   formatCommentData,
-  formatSingleTopic,
-  formatSingleUser,
-  formatData
 } = require("../utils");
 
 const seedDB = ({ topicData, userData, articleData, commentData }) => {
   return mongoose.connection.dropDatabase().then(() => {
-    const formattedTopicData = formatData(topicData, formatSingleTopic);
-    const formattedUserData = formatData(userData, formatSingleUser);
     return Promise.all([
-      Topic.insertMany(formattedTopicData),
-      User.insertMany(formattedUserData)
+      Topic.insertMany(topicData),
+      User.insertMany(userData)
     ]);
   })
     .then(([topicDocs, userDocs]) => {

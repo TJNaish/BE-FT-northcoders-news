@@ -9,5 +9,6 @@ mongoose.connect(DB_URL, { useNewUrlParser: true })
     return seedDB(rawData)
   })
   .then(() => {
+    console.log(`Seeding complete`)
     return mongoose.disconnect();
   })

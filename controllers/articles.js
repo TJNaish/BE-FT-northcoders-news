@@ -36,6 +36,7 @@ const articleVotes = (req, res, next) => {
       if (req.query.vote === 'down') foundArticle.votes -= 1
       res.status(200).send({ foundArticle })
     })
+    .catch(next)
 }
 
 const postNewComment = (req, res, next) => {
@@ -45,6 +46,7 @@ const postNewComment = (req, res, next) => {
     .then(comment => {
       res.status(201).send({ comment, message: 'Your comment has been added.' })
     })
+    .catch(next)
 }
 
 module.exports = { getAllArticles, getArticleComments, getSingleArticle, articleVotes, postNewComment }

@@ -42,27 +42,9 @@ const formatCommentData = (comments, userRef, articleRef) => {
     }
   })
 }
-formatSingleTopic = topicDatum => {
-  return {
-    ...topicDatum
-  }
-}
-
-formatSingleUser = userDatum => {
-  return {
-    ...userDatum
-  }
-}
-
-const formatData = (data, formatter) => {
-  return data.map(formatter);
-}
 
 module.exports = {
   createRef,
   formatArticleData,
   formatCommentData,
-  formatSingleTopic,
-  formatSingleUser,
-  formatData
 }

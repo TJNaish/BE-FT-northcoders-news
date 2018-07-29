@@ -46,9 +46,8 @@ This project utilises the following dependencies:
 - Body-Parser 1.15.2
 - Express 4.16.3
 - Mongoose 5.2.4
-- Path 0.12.7
 
-You can quickly install of of these dependencies by navigating to the root folder of the project in your terminal and typing `npm i body-parser express mongoose path`
+You can quickly install of of these dependencies by navigating to the root folder of the project in your terminal and typing `npm i body-parser express mongoose`
 
 ## Modifying
 
@@ -61,3 +60,9 @@ line 4 of the seed file located at seed/seed.dev.js is:
 This should be left unchanged for production, however this can be modified to 
 `const rawData = require("./testData")`
 should you wish to populate the DB with a very small sample of data for testing purposes.
+
+## Testing
+
+This project purposefully has a spec folder left in. This shows the testing done on each route, and can be used by typing "npm t" from the terminal in the root of the project.
+
+If you wish to use the testing suite, you will need to install the supertest, chai and mocha dependencies. We recommend doing this as a developer dependancy, by typing `npm i -D chai mocha supertest`
