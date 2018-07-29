@@ -10,11 +10,10 @@ You can find a deployed version of this project at https://tnaish-ncnews.herokua
 
 To download this project, take the following steps:
 
--Fork the project to your own git hub profile.
--Open your terminal, and navigate to where you would like to download the project.
--Clone the repo, by typing "git clone" and then the URL of your repo (you can find this by clicking the green 'Clone or Download' button)
-
-config - You should set up a config folder in the root of the project. Create an index.js file inside of this, and paste in the following code:
+- Fork the project to your own git hub profile.
+- Open your terminal, and navigate to where you would like to download the project.
+- Clone the repo, by typing "git clone" and then the URL of your repo (you can find this by clicking the green 'Clone or Download' button)
+- config - You should set up a config folder in the root of the project. Create an index.js file inside of this, and paste in the following code:
 
 ----------------------------------------------------------------------------------
 ```javascript
@@ -35,19 +34,19 @@ module.exports = config[NODE_ENV];
 ```
 ----------------------------------------------------------------------------------
 
--Using terminal from the root of the server, you can seed the database with example data by using the following command:
+- Using terminal from the root of the server, you can seed the database with example data by using the following command:
 `npm run seed`
--Run thge server using your terminal by typing `node index/js`
--You can now connect to and view your server locally by opening an internet browser, and going to 127.0.0.1/api
+- Run thge server using your terminal by typing `node index/js`
+- You can now connect to and view your server locally by opening an internet browser, and going to 127.0.0.1/api
 
 ## Dependencies
 
 This project utilises the following dependencies:
--Node 8.10.0
--Body-Parser 1.15.2
--Express 4.16.3
--Mongoose 5.2.4
--Path 0.12.7
+- Node 8.10.0
+- Body-Parser 1.15.2
+- Express 4.16.3
+- Mongoose 5.2.4
+- Path 0.12.7
 
 You can quickly install of of these dependencies by navigating to the root folder of the project in your terminal and typing `npm i body-parser express mongoose path`
 
