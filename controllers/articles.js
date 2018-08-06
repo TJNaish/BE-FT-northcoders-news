@@ -30,11 +30,13 @@ const getSingleArticle = (req, res, next) => {
 }
 
 const articleVotes = (req, res, next) => {
-  Article.findOne({ _id: req.params.article_id })
-    .then(foundArticle => {
-      if (req.query.vote === 'up') foundArticle.votes += 1
-      if (req.query.vote === 'down') foundArticle.votes -= 1
-      res.status(200).send({ foundArticle })
+  let num = -1
+  if (req.query.vote === 'up') num = 1
+  Article.findByIdAndUpdate(req.params.article_id, { $inc: { votes: num } }, { new: true })
+    .then(updatedVote => {
+      updatedVote === null ?
+        next({ status: 404, message: `Article with ID ${req.params.article_id} not found` })
+        : res.status(200).send({ updatedVote })
     })
     .catch(next)
 }
