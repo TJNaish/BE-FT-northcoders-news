@@ -65,4 +65,4 @@ should you wish to populate the DB with a very small sample of data for testing 
 
 This project purposefully has a spec folder left in. This shows the testing done on each route, and can be used by typing "npm t" from the terminal in the root of the project.
 
-If you wish to use the testing suite, you will need to install the supertest, chai and mocha dependencies. We recommend doing this as a developer dependancy, by typing `npm i -D chai mocha supertest`
+If you wish to use the testing suite, you will need to install the supertest, chai and mocha dependencies. I recommend doing this as a developer dependancy, by typing `npm i -D chai mocha supertest`
