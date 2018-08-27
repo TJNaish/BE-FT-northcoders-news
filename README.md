@@ -1,4 +1,4 @@
-# NC News Back End
+# Northcoders News Back End
 
 [Click here to go to the deployed demo](https://tnaish-ncnews.herokuapp.com/api)
 
