@@ -1,10 +1,12 @@
 # NC News Back End
 
+[Click here to go to the deployed demo](https://tnaish-ncnews.herokuapp.com/api)
+
 ## About
 
 This project is an example of a server for online content management, using MongoDB and an express server model to sort, link and display data.
 
-You can find a deployed version of this project at https://tnaish-ncnews.herokuapp.com/api
+The back end of this project was also created as a demonstration project, and can be found [here](https://github.com/TJNaish/FE-FT-northcoders-news).
 
 ## Download & Setup
 
