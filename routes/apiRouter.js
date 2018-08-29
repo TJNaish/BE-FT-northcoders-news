@@ -1,14 +1,14 @@
-const express = require("express")
+const express = require("express");
 const apiRouter = express.Router();
-const path = require('path');
+const path = require("path");
 const articleRouter = require("./articleRouter");
 const commentRouter = require("./commentRouter");
 const topicRouter = require("./topicRouter");
 const userRouter = require("./userRouter");
 
-apiRouter.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '../', "/public/Endpoints.html"))
-})
+apiRouter.get("/", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../", "/public/Endpoints.html"));
+});
 
 apiRouter.use("/articles", articleRouter);
 apiRouter.use("/comments", commentRouter);

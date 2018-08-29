@@ -1,14 +1,18 @@
 const seedDB = require("./seed");
 const mongoose = require("mongoose");
-const { DB_URL } = require('../config');
+const { DB_URL } = require("../config");
 const rawData = require("./devData");
 
-mongoose.connect(DB_URL, { useNewUrlParser: true })
+mongoose
+  .connect(
+    DB_URL,
+    { useNewUrlParser: true }
+  )
   .then(() => {
     console.log(`connected to ${DB_URL}`);
-    return seedDB(rawData)
+    return seedDB(rawData);
   })
   .then(() => {
-    console.log(`Seeding complete`)
+    console.log(`Seeding complete`);
     return mongoose.disconnect();
-  })
+  });
